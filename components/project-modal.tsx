@@ -73,13 +73,13 @@ export default function ProjectModal({ project, isOpen, onClose }) {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="relative">
-                <div className="relative aspect-video overflow-hidden">
+                <div className="relative aspect-video overflow-hidden h-64 md:h-80 w-full overflow-y-auto overflow-x-hidden">
                   <AnimatePresence mode="wait">
                     <motion.img
                       key={currentImageIndex}
                       src={gallery[currentImageIndex] || "/placeholder.svg"}
                       alt={`${project.title} - Image ${currentImageIndex + 1}`}
-                      className="w-full h-full object-cover"
+                      className="w-full  object-cover"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}

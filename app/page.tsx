@@ -55,10 +55,8 @@ const skills = [
 
 // Sample client logos
 const clientLogos = [
-  { src: "/placeholder-logo.svg", alt: "Client 1" },
-  { src: "/placeholder-logo.svg", alt: "Client 2" },
-  { src: "/placeholder-logo.svg", alt: "Client 3" },
-  { src: "/placeholder-logo.svg", alt: "Client 4" },
+  { src: "/organisation/kylin.png", alt: "Kylin Web3" },
+  { src: "/organisation/dfoodcore.jpeg", alt: "Dfoodcore" },
 ]
 
 // Sample testimonials

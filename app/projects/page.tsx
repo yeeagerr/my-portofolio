@@ -11,9 +11,9 @@ import ProjectModal from "@/components/project-modal"
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Redesign",
+    title: "Online ticketing bus travel",
     category: "Web",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/project/bustrav-header.png?height=600&width=800",
     description:
       "A complete redesign of an e-commerce platform focusing on user experience and conversion optimization.",
     longDescription: (
@@ -37,75 +37,191 @@ const projects = [
       "Content management system for easy updates",
     ],
     gallery: [
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
+      "/project/bustrav.infy.uk_.png?height=auto&width=800",
+      "/project/bustrav.infy.uk_ticket.png?width=800",
+      "/project/bustrav_detail.png?width=800",
     ],
+    github: "",
+    livePreview: ""
   },
   {
     id: 2,
-    title: "Financial Dashboard",
-    category: "UI/UX",
-    image: "/placeholder.svg?height=600&width=800",
-    description: "An intuitive financial dashboard with real-time data visualization and interactive charts.",
+    title: "Dropshipping Website",
+    category: "Web",
+    image: "/project/azazel-cover.png?height=600&width=800",
+    description:
+      "A complete redesign of an e-commerce platform focusing on user experience and conversion optimization.",
     longDescription: (
       <>
         <p>
-          This financial dashboard provides users with a comprehensive overview of their financial data through
-          intuitive visualizations and interactive elements.
+          This project involved a complete overhaul of an existing e-commerce platform to improve user experience,
+          increase conversion rates, and modernize the visual design.
         </p>
         <p>
-          The design prioritizes clarity and accessibility, making complex financial information easy to understand at a
-          glance while providing detailed insights on demand.
+          The redesign focused on creating a seamless shopping experience across all devices, with special attention to
+          the checkout process and product discovery.
         </p>
       </>
     ),
-    technologies: ["React", "D3.js", "Tailwind CSS", "TypeScript", "Redux"],
+    technologies: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Stripe", "Sanity CMS"],
     features: [
-      "Real-time data updates",
-      "Interactive charts and graphs",
-      "Customizable dashboard layouts",
-      "Data export functionality",
-      "Responsive design for all devices",
+      "Responsive design optimized for all devices",
+      "Advanced filtering and search functionality",
+      "Streamlined checkout process",
+      "Integrated payment processing",
+      "Content management system for easy updates",
     ],
-    gallery: ["/placeholder.svg?height=600&width=800", "/placeholder.svg?height=600&width=800"],
+    gallery: [
+      "/project/azazel-store.vercel.app_.png",
+      "/project/azazel-store.vercel.detail.png",
+      "/project/azazel-store-how-to.png",
+    ],
+    github: "",
+    livePreview: ""
   },
+
   {
     id: 3,
-    title: "Travel App",
-    category: "Mobile",
-    image: "/placeholder.svg?height=600&width=800",
-    description: "A mobile app for travel enthusiasts with personalized recommendations and immersive experiences.",
-    technologies: ["React Native", "Firebase", "Google Maps API"],
-    gallery: ["/placeholder.svg?height=600&width=800"],
+    title: "UI/UX School canteen app",
+    category: "UI/UX",
+    image: "/project/kantin-splash-screen.png",
+    description:
+      "A complete redesign of an e-commerce platform focusing on user experience and conversion optimization.",
+    longDescription: (
+      <>
+        <p>
+          This project involved a complete overhaul of an existing e-commerce platform to improve user experience,
+          increase conversion rates, and modernize the visual design.
+        </p>
+        <p>
+          The redesign focused on creating a seamless shopping experience across all devices, with special attention to
+          the checkout process and product discovery.
+        </p>
+      </>
+    ),
+    technologies: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Stripe", "Sanity CMS"],
+    features: [
+      "Responsive design optimized for all devices",
+      "Advanced filtering and search functionality",
+      "Streamlined checkout process",
+      "Integrated payment processing",
+      "Content management system for easy updates",
+    ],
+    gallery: [
+      "/project/kantin-mhs.png",
+      "/project/kantin-Order-Page.png",
+      "/project/kantin-Succes-page.png",
+    ],
+    github: "",
+    livePreview: ""
   },
+
   {
     id: 4,
-    title: "3D Product Configurator",
-    category: "Experimental",
-    image: "/placeholder.svg?height=600&width=800",
-    description: "An interactive 3D product configurator allowing users to customize products in real-time.",
-    technologies: ["Three.js", "React", "WebGL", "GSAP"],
-    gallery: ["/placeholder.svg?height=600&width=800"],
+    title: "Job portal website",
+    category: "Web",
+    image: "/project/riau-jobseeker.png",
+    description:
+      "A complete redesign of an e-commerce platform focusing on user experience and conversion optimization.",
+    longDescription: (
+      <>
+        <p>
+          This project involved a complete overhaul of an existing e-commerce platform to improve user experience,
+          increase conversion rates, and modernize the visual design.
+        </p>
+        <p>
+          The redesign focused on creating a seamless shopping experience across all devices, with special attention to
+          the checkout process and product discovery.
+        </p>
+      </>
+    ),
+    technologies: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Stripe", "Sanity CMS"],
+    features: [
+      "Responsive design optimized for all devices",
+      "Advanced filtering and search functionality",
+      "Streamlined checkout process",
+      "Integrated payment processing",
+      "Content management system for easy updates",
+    ],
+    gallery: [
+      "/project/riau-jobseeker.wuaze.com__i=1.png",
+      "/project/riau-jobseeker.wuaze.com_job.png",
+      "/project/riau-jobseeker.wuaze.com_user_profile_12.png",
+    ],
+    github: "",
+    livePreview: ""
   },
+
   {
     id: 5,
-    title: "Portfolio for Photographer",
-    category: "Design",
-    image: "/placeholder.svg?height=600&width=800",
-    description: "A minimalist portfolio website for a professional photographer with focus on visual storytelling.",
-    technologies: ["Next.js", "Framer Motion", "CSS Grid", "Cloudinary"],
-    gallery: ["/placeholder.svg?height=600&width=800"],
+    title: "School E-Report",
+    category: "Web",
+    image: "/project/INDEX - HOME GURU.png",
+    description:
+      "A complete redesign of an e-commerce platform focusing on user experience and conversion optimization.",
+    longDescription: (
+      <>
+        <p>
+          This project involved a complete overhaul of an existing e-commerce platform to improve user experience,
+          increase conversion rates, and modernize the visual design.
+        </p>
+        <p>
+          The redesign focused on creating a seamless shopping experience across all devices, with special attention to
+          the checkout process and product discovery.
+        </p>
+      </>
+    ),
+    technologies: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Stripe", "Sanity CMS"],
+    features: [
+      "Responsive design optimized for all devices",
+      "Advanced filtering and search functionality",
+      "Streamlined checkout process",
+      "Integrated payment processing",
+      "Content management system for easy updates",
+    ],
+    gallery: [
+      "/project/INDEX - HOME GURU.png",
+      "/project/INDEX - TABLE RANKING SISWA.png",
+      "/project/INDEX -TABLE RAPORT SISWA.png",
+    ],
+    github: "",
+    livePreview: ""
   },
+
   {
     id: 6,
-    title: "Interactive Music Experience",
-    category: "Experimental",
-    image: "/placeholder.svg?height=600&width=800",
-    description: "An experimental web application that creates visual representations of music in real-time.",
-    technologies: ["Web Audio API", "Canvas", "GSAP", "React"],
-    gallery: ["/placeholder.svg?height=600&width=800"],
+    title: "Courier website header",
+    category: "Design",
+    image: "/project/gokureer.png",
+    description:
+      "A complete redesign of an e-commerce platform focusing on user experience and conversion optimization.",
+    longDescription: (
+      <>
+        <p>
+          This project involved a complete overhaul of an existing e-commerce platform to improve user experience,
+          increase conversion rates, and modernize the visual design.
+        </p>
+        <p>
+          The redesign focused on creating a seamless shopping experience across all devices, with special attention to
+          the checkout process and product discovery.
+        </p>
+      </>
+    ),
+    technologies: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Stripe", "Sanity CMS"],
+    features: [
+      "Responsive design optimized for all devices",
+      "Advanced filtering and search functionality",
+      "Streamlined checkout process",
+      "Integrated payment processing",
+      "Content management system for easy updates",
+    ],
+    gallery: [
+      "/project/gokureer.png",
+    ],
+    github: "",
+    livePreview: ""
   },
+  
 ]
 
 // Categories for filtering

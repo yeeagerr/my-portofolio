@@ -60,11 +60,14 @@ export default function BlogModal({ post, isOpen, onClose }) {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="relative">
+                <div className="h-64 md:h-80 w-full overflow-y-auto overflow-x-hidden">
                 <img
                   src={post.image || "/placeholder.svg"}
                   alt={post.title}
-                  className="w-full h-64 md:h-80 object-cover"
+                  className="w-full   "
                 />
+                </div>
+               
                 <button
                   onClick={onClose}
                   className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-gray-800 hover:bg-white transition-colors"

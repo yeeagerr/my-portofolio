@@ -5,24 +5,25 @@ import { motion } from "framer-motion"
 // Sample timeline data
 const timelineItems = [
   {
-    year: "2022 - Present",
-    title: "Senior Frontend Developer",
-    company: "Tech Innovations Inc.",
+    year: "2020 - 2021",
+    title: "High School Student",
+    company: "Local High School",
     description:
-      "Leading the frontend development team, implementing cutting-edge technologies and mentoring junior developers.",
+      "Laid the groundwork for a career in technology by delving into programming through online courses and academic projects, gaining a solid foundation in web development and analytical problem-solving.",
   },
   {
-    year: "2020 - 2022",
-    title: "UI/UX Developer",
-    company: "Creative Solutions",
+    year: "2022 - 2023",
+    title: "Freelance Web Developer",
+    company: "Self-Employed",
     description:
-      "Designed and developed user interfaces for various clients, focusing on accessibility and performance optimization.",
+      "Delivered high-quality freelance projects, including the development of a fully responsive e-commerce platform for a local retailer, integrating secure payment systems and optimizing user experience for increased engagement.",
   },
   {
-    year: "2018 - 2020",
-    title: "Web Developer",
-    company: "Digital Agency",
-    description: "Created responsive websites and interactive applications for clients across different industries.",
+    year: "2024 - 2025",
+    title: "Web Developer Intern",
+    company: "PT. Pundi Mas Berjaya",
+    description:
+      "Contributed to the development and maintenance of scalable web applications as part of a professional team, refining technical expertise and gaining valuable insights into industry best practices and collaborative workflows.",
   },
 ]
 
