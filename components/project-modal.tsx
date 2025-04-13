@@ -1,53 +1,55 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { X, Globe, Github, ChevronLeft, ChevronRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, Globe, Github, ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function ProjectModal({ project, isOpen, onClose }) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Close modal on escape key
   useEffect(() => {
     const handleEsc = (e) => {
-      if (e.key === "Escape") onClose()
-    }
+      if (e.key === "Escape") onClose();
+    };
 
     if (isOpen) {
-      window.addEventListener("keydown", handleEsc)
+      window.addEventListener("keydown", handleEsc);
     }
 
     return () => {
-      window.removeEventListener("keydown", handleEsc)
-    }
-  }, [isOpen, onClose])
+      window.removeEventListener("keydown", handleEsc);
+    };
+  }, [isOpen, onClose]);
 
   // Prevent body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto"
+      document.body.style.overflow = "auto";
     }
 
     return () => {
-      document.body.style.overflow = "auto"
-    }
-  }, [isOpen])
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
-  if (!project) return null
+  if (!project) return null;
 
   // Use project.gallery if available, otherwise create a gallery with the main image
-  const gallery = project.gallery || [project.image]
+  const gallery = project.gallery || [project.image];
 
   const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % gallery.length)
-  }
+    setCurrentImageIndex((prev) => (prev + 1) % gallery.length);
+  };
 
   const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + gallery.length) % gallery.length)
-  }
+    setCurrentImageIndex(
+      (prev) => (prev - 1 + gallery.length) % gallery.length
+    );
+  };
 
   return (
     <AnimatePresence>
@@ -108,7 +110,9 @@ export default function ProjectModal({ project, isOpen, onClose }) {
                             key={index}
                             onClick={() => setCurrentImageIndex(index)}
                             className={`w-2 h-2 rounded-full ${
-                              index === currentImageIndex ? "bg-white" : "bg-white/50"
+                              index === currentImageIndex
+                                ? "bg-white"
+                                : "bg-white/50"
                             }`}
                           />
                         ))}
@@ -129,19 +133,28 @@ export default function ProjectModal({ project, isOpen, onClose }) {
                 <span className="inline-block px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full mb-3">
                   {project.category}
                 </span>
-                <h2 className="text-2xl md:text-3xl font-medium text-gray-900 mb-4">{project.title}</h2>
+                <h2 className="text-2xl md:text-3xl font-medium text-gray-900 mb-4">
+                  {project.title}
+                </h2>
 
                 <div className="prose prose-gray max-w-none mb-6">
                   <p className="text-gray-600">{project.description}</p>
 
-                  {project.longDescription && <div className="mt-4">{project.longDescription}</div>}
+                  {project.longDescription && (
+                    <div className="mt-4">{project.longDescription}</div>
+                  )}
                 </div>
 
                 <div className="mb-6">
-                  <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">Technologies</h3>
+                  <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">
+                    Technologies
+                  </h3>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
-                      <span key={tech} className="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full">
+                      <span
+                        key={tech}
+                        className="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full"
+                      >
                         {tech}
                       </span>
                     ))}
@@ -150,7 +163,9 @@ export default function ProjectModal({ project, isOpen, onClose }) {
 
                 {project.features && (
                   <div className="mb-6">
-                    <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">Key Features</h3>
+                    <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">
+                      Key Features
+                    </h3>
                     <ul className="list-disc pl-5 text-gray-600 space-y-1">
                       {project.features.map((feature, index) => (
                         <li key={index}>{feature}</li>
@@ -160,14 +175,44 @@ export default function ProjectModal({ project, isOpen, onClose }) {
                 )}
 
                 <div className="flex flex-wrap gap-3">
-                  <Button className="rounded-lg flex items-center gap-2">
-                    <Globe className="h-4 w-4" />
-                    View Live Site
-                  </Button>
-                  <Button variant="outline" className="rounded-lg flex items-center gap-2">
-                    <Github className="h-4 w-4" />
-                    View Source Code
-                  </Button>
+                    {project?.livePreview ? (
+                    <Button
+                      className="rounded-lg flex items-center gap-2"
+                      onClick={() => window.open(project.livePreview, "_blank")}
+                    >
+                      <Globe className="h-4 w-4" />
+                      View Live Site
+                    </Button>
+                    ) : (
+                    <Button
+                      className="rounded-lg flex items-center gap-2"
+                      disabled
+                    >
+                      <Globe className="h-4 w-4 opacity-50" />
+                      Not Available
+                    </Button>
+                    )}
+                    {project?.github ? (
+                    <Button
+                      variant="outline"
+                      onClick={() => window.open(project.github, "_blank")}
+                      className="rounded-lg flex items-center gap-2"
+                    >
+                      <Github className="h-4 w-4" />
+                      View Source Code
+                    </Button>
+                    ) : (
+                    <Button
+                      variant="outline"
+                      className="rounded-lg flex items-center gap-2"
+                      disabled
+                    >
+                      <Github className="h-4 w-4 opacity-50" />
+                      Not Available
+                    </Button>
+                    )}
+
+                  
                 </div>
               </div>
             </div>
@@ -175,5 +220,5 @@ export default function ProjectModal({ project, isOpen, onClose }) {
         </>
       )}
     </AnimatePresence>
-  )
+  );
 }

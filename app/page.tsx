@@ -1,37 +1,45 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
-import Link from "next/link"
-import { ArrowDown, ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import CustomCursor from "@/components/custom-cursor"
-import ThreeBackground from "@/components/three-background"
-import TypingAnimation from "@/components/typing-animation"
-import SkillIcon from "@/components/skill-icon"
-import ClientLogo from "@/components/client-logo"
-import TestimonialCard from "@/components/testimonial-card"
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
+import { ArrowDown, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import CustomCursor from "@/components/custom-cursor";
+import ThreeBackground from "@/components/three-background";
+import TypingAnimation from "@/components/typing-animation";
+import SkillIcon from "@/components/skill-icon";
+import ClientLogo from "@/components/client-logo";
+import TestimonialCard from "@/components/testimonial-card";
 
 // Sample projects data
 const featuredProjects = [
   {
     id: 1,
-    title: "E-Commerce Redesign",
+    title: "Online ticketing bus travel",
     category: "Web",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/project/bustrav-header.png?height=600&width=800",
     description:
-      "A complete redesign of an e-commerce platform focusing on user experience and conversion optimization.",
-    technologies: ["React", "Next.js", "Tailwind CSS", "Framer Motion"],
+      "A user-friendly online bus ticket booking system designed to simplify travel planning and payment.",
+    technologies: ["Laravel", "PHP", "Javascript", "MySQL", "Tailwindcss"],
   },
   {
-    id: 2,
-    title: "3D Product Configurator",
-    category: "Experimental",
-    image: "/placeholder.svg?height=600&width=800",
-    description: "An interactive 3D product configurator allowing users to customize products in real-time.",
-    technologies: ["Three.js", "React", "WebGL", "GSAP"],
+    id: 4,
+    title: "Job portal website",
+    category: "Web",
+    image: "/project/riau-jobseeker.png",
+    description:
+      "A job portal designed to connect job seekers and employers with intuitive search and application flows.",
+    technologies: [
+      "Laravel",
+      "PHP",
+      "Javascript",
+      "Jquery",
+      "MySQL",
+      "Tailwindcss",
+    ],
   },
-]
+];
 
 // Sample skills data
 const skills = [
@@ -44,20 +52,21 @@ const skills = [
   "bootstrap",
   "typescript",
   "nodejs",
-  'python',
+  "python",
   "figma",
-  'mysql',
-  'postgresql',
-  'firebase',
-  'mongodb',
-  "git"
-]
+  "mysql",
+  "postgresql",
+  "firebase",
+  "mongodb",
+  "git",
+];
 
 // Sample client logos
 const clientLogos = [
   { src: "/organisation/kylin.png", alt: "Kylin Web3" },
   { src: "/organisation/dfoodcore.jpeg", alt: "Dfoodcore" },
-]
+  { src: "/organisation/panda-deals.png", alt: "Panda Deals" },
+];
 
 // Sample testimonials
 const testimonials = [
@@ -73,26 +82,26 @@ const testimonials = [
     author: "Nezseco",
     role: "CTO, Minimal Works",
   },
-]
+];
 
 export default function Home() {
-  const scrollRef = useRef<HTMLDivElement>(null)
-  const heroRef = useRef<HTMLDivElement>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
-  })
+  });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0])
-  const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.8])
+  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.8]);
 
   const handleScrollDown = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollIntoView({ behavior: "smooth" })
+      scrollRef.current.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
     <main ref={containerRef} className="min-h-screen bg-white">
@@ -105,7 +114,10 @@ export default function Home() {
       >
         <ThreeBackground type="particles" color="#cccccc" />
 
-        <motion.div style={{ opacity, scale }} className="text-center max-w-4xl mx-auto z-10">
+        <motion.div
+          style={{ opacity, scale }}
+          className="text-center max-w-4xl mx-auto z-10"
+        >
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -113,7 +125,9 @@ export default function Home() {
             className="text-4xl sm:text-5xl md:text-7xl font-light tracking-tight text-gray-900 mb-6"
           >
             <span className="block">Creative</span>
-            <span className="font-medium block mt-2">Web Developer & Designer</span>
+            <span className="font-medium block mt-2">
+              Web Developer & Designer
+            </span>
           </motion.h1>
 
           <TypingAnimation
@@ -123,7 +137,10 @@ export default function Home() {
           />
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild className="rounded-full px-8 py-6 text-base transition-all hover:scale-105">
+            <Button
+              asChild
+              className="rounded-full px-8 py-6 text-base transition-all hover:scale-105"
+            >
               <Link href="/projects">
                 View My Work
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -167,12 +184,15 @@ export default function Home() {
             className="mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-6">
-              Hello, I'm <span className="font-medium">Muhammad Habib Abdillah</span>
+              Hello, I'm{" "}
+              <span className="font-medium">Muhammad Habib Abdillah</span>
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              I'm a creative developer and designer with a passion for building beautiful, functional digital
-              experiences. With expertise in front-end development and interactive design, I create websites that not
-              only look stunning but also deliver exceptional user experiences.
+              I'm a creative developer and designer with a passion for building
+              beautiful, functional digital experiences. With expertise in
+              front-end development and interactive design, I create websites
+              that not only look stunning but also deliver exceptional user
+              experiences.
             </p>
           </motion.div>
         </div>
@@ -188,10 +208,12 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">Featured Projects</h2>
+            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
+              Featured Projects
+            </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              A selection of my recent work. Each project is crafted with attention to detail and a focus on user
-              experience.
+              A selection of my recent work. Each project is crafted with
+              attention to detail and a focus on user experience.
             </p>
           </motion.div>
 
@@ -214,18 +236,27 @@ export default function Home() {
                   />
                 </div>
                 <div className="p-6">
-                  <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">{project.category}</span>
-                  <h3 className="text-xl font-medium text-gray-900 mt-1 mb-2">{project.title}</h3>
-                  <p className="text-gray-600 mb-4 line-clamp-2">{project.description}</p>
+                  <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    {project.category}
+                  </span>
+                  <h3 className="text-xl font-medium text-gray-900 mt-1 mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4 line-clamp-2">
+                    {project.description}
+                  </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.slice(0, 3).map((tech) => (
-                      <span key={tech} className="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full">
+                      <span
+                        key={tech}
+                        className="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full"
+                      >
                         {tech}
                       </span>
                     ))}
                   </div>
                   <Link
-                    href={`/projects/${project.id}`}
+                    href={`/projects`}
                     className="inline-flex items-center text-sm font-medium text-gray-900 hover:text-gray-700"
                   >
                     View Project
@@ -261,8 +292,12 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">Skills & Tools</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">The technologies and tools I use to bring ideas to life.</p>
+            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
+              Skills & Tools
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              The technologies and tools I use to bring ideas to life.
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-6 md:gap-8">
@@ -283,7 +318,9 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">Trusted By</h2>
+            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
+              Trusted By
+            </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Companies and organizations I've had the pleasure to work with.
             </p>
@@ -291,7 +328,12 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {clientLogos.map((logo, index) => (
-              <ClientLogo key={index} src={logo.src} alt={logo.alt} index={index} />
+              <ClientLogo
+                key={index}
+                src={logo.src}
+                alt={logo.alt}
+                index={index}
+              />
             ))}
           </div>
         </div>
@@ -307,8 +349,12 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">What Clients Say</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Feedback from people I've worked with.</p>
+            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
+              What Clients Say
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Feedback from people I've worked with.
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -334,11 +380,17 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-6">Ready to start your project?</h2>
+            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-6">
+              Ready to start your project?
+            </h2>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Let's collaborate to create something amazing together. I'm currently available for freelance projects.
+              Let's collaborate to create something amazing together. I'm
+              currently available for freelance projects.
             </p>
-            <Button asChild className="rounded-full px-8 py-6 text-base transition-all hover:scale-105">
+            <Button
+              asChild
+              className="rounded-full px-8 py-6 text-base transition-all hover:scale-105"
+            >
               <Link href="/contact">
                 Get in Touch
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -348,5 +400,5 @@ export default function Home() {
         </div>
       </section>
     </main>
-  )
+  );
 }

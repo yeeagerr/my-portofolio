@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import CustomCursor from "@/components/custom-cursor"
-import ProjectModal from "@/components/project-modal"
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import CustomCursor from "@/components/custom-cursor";
+import ProjectModal from "@/components/project-modal";
 
 // Sample project data with expanded details
 const projects = [
@@ -15,34 +15,36 @@ const projects = [
     category: "Web",
     image: "/project/bustrav-header.png?height=600&width=800",
     description:
-      "A complete redesign of an e-commerce platform focusing on user experience and conversion optimization.",
+      "A user-friendly online bus ticket booking system designed to simplify travel planning and payment.",
     longDescription: (
       <>
         <p>
-          This project involved a complete overhaul of an existing e-commerce platform to improve user experience,
-          increase conversion rates, and modernize the visual design.
+          This project features an online ticketing platform for bus travel,
+          aimed at making it easier for users to browse routes, check schedules,
+          and book tickets seamlessly.
         </p>
         <p>
-          The redesign focused on creating a seamless shopping experience across all devices, with special attention to
-          the checkout process and product discovery.
+          The interface was optimized for both mobile and desktop devices, with
+          an emphasis on intuitive navigation, real-time availability, and a
+          smooth checkout process.
         </p>
       </>
     ),
-    technologies: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Stripe", "Sanity CMS"],
+    technologies: ["Laravel", "PHP", "Javascript", "MySQL", "Tailwindcss"],
     features: [
-      "Responsive design optimized for all devices",
-      "Advanced filtering and search functionality",
-      "Streamlined checkout process",
-      "Integrated payment processing",
-      "Content management system for easy updates",
+      "Bus schedule and route listings",
+      "Online ticket booking with payment gateway",
+      "Printable and digital ticket options",
+      "Mobile-first responsive design",
+      "Admin panel for managing schedules and bookings",
     ],
     gallery: [
       "/project/bustrav.infy.uk_.png?height=auto&width=800",
       "/project/bustrav.infy.uk_ticket.png?width=800",
       "/project/bustrav_detail.png?width=800",
     ],
-    github: "",
-    livePreview: ""
+    github: null,
+    livePreview: "http://bustrav.infy.uk/",
   },
   {
     id: 2,
@@ -50,34 +52,33 @@ const projects = [
     category: "Web",
     image: "/project/azazel-cover.png?height=600&width=800",
     description:
-      "A complete redesign of an e-commerce platform focusing on user experience and conversion optimization.",
+      "A modern dropshipping store built for automation, ease of use, and optimized sales conversion.",
     longDescription: (
       <>
         <p>
-          This project involved a complete overhaul of an existing e-commerce platform to improve user experience,
-          increase conversion rates, and modernize the visual design.
+          This dropshipping website was designed to streamline online product
+          sales without inventory. It features an appealing storefront, product
+          automation, and smooth customer journey.
         </p>
         <p>
-          The redesign focused on creating a seamless shopping experience across all devices, with special attention to
-          the checkout process and product discovery.
+          Key areas included optimizing product discovery, integrating automated
+          order fulfillment, and creating a brand-consistent shopping
+          experience.
         </p>
       </>
     ),
-    technologies: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Stripe", "Sanity CMS"],
+    technologies: ["React", "Tailwindcss", "DaisyUI", "MongoDB"],
     features: [
-      "Responsive design optimized for all devices",
-      "Advanced filtering and search functionality",
-      "Streamlined checkout process",
-      "Integrated payment processing",
-      "Content management system for easy updates",
+      "Product catalog with static inventory display",
+      "Simple use and ready to use",
     ],
     gallery: [
       "/project/azazel-store.vercel.app_.png",
       "/project/azazel-store.vercel.detail.png",
       "/project/azazel-store-how-to.png",
     ],
-    github: "",
-    livePreview: ""
+    github: null,
+    livePreview: "https://azazel-store.vercel.app/",
   },
 
   {
@@ -86,34 +87,34 @@ const projects = [
     category: "UI/UX",
     image: "/project/kantin-splash-screen.png",
     description:
-      "A complete redesign of an e-commerce platform focusing on user experience and conversion optimization.",
+      "A mobile-focused UI/UX design for a school canteen app to simplify food ordering for students.",
     longDescription: (
       <>
         <p>
-          This project involved a complete overhaul of an existing e-commerce platform to improve user experience,
-          increase conversion rates, and modernize the visual design.
+          This UI/UX project focuses on designing an intuitive school canteen
+          app, allowing students to browse menus, pre-order meals, and make
+          payments easily.
         </p>
         <p>
-          The redesign focused on creating a seamless shopping experience across all devices, with special attention to
-          the checkout process and product discovery.
+          The design prioritizes simplicity and clarity, ensuring a smooth user
+          experience for both students and canteen staff.
         </p>
       </>
     ),
-    technologies: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Stripe", "Sanity CMS"],
+    technologies: ["Figma"],
     features: [
-      "Responsive design optimized for all devices",
-      "Advanced filtering and search functionality",
-      "Streamlined checkout process",
-      "Integrated payment processing",
-      "Content management system for easy updates",
+      "Modern and clean interface",
+      "Daily menu and meal categories UI",
+      "Order success screen",
     ],
     gallery: [
       "/project/kantin-mhs.png",
       "/project/kantin-Order-Page.png",
       "/project/kantin-Succes-page.png",
     ],
-    github: "",
-    livePreview: ""
+    github: null,
+    livePreview:
+      "https://www.figma.com/design/PcXc74a54tGslRtJ2wXZzF/Untitled?node-id=1-17&t=ZZ7tlY3ZpoL2iZmN-0",
   },
 
   {
@@ -122,34 +123,42 @@ const projects = [
     category: "Web",
     image: "/project/riau-jobseeker.png",
     description:
-      "A complete redesign of an e-commerce platform focusing on user experience and conversion optimization.",
+      "A job portal designed to connect job seekers and employers with intuitive search and application flows.",
     longDescription: (
       <>
         <p>
-          This project involved a complete overhaul of an existing e-commerce platform to improve user experience,
-          increase conversion rates, and modernize the visual design.
+          This project is a responsive web platform designed to help users
+          search for job opportunities, create profiles, and apply to listings
+          with ease.
         </p>
         <p>
-          The redesign focused on creating a seamless shopping experience across all devices, with special attention to
-          the checkout process and product discovery.
+          Employers can post jobs, manage applications, and review candidate
+          profiles within a streamlined dashboard.
         </p>
       </>
     ),
-    technologies: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Stripe", "Sanity CMS"],
+    technologies: [
+      "Laravel",
+      "PHP",
+      "Javascript",
+      "Jquery",
+      "MySQL",
+      "Tailwindcss",
+    ],
     features: [
-      "Responsive design optimized for all devices",
-      "Advanced filtering and search functionality",
-      "Streamlined checkout process",
-      "Integrated payment processing",
-      "Content management system for easy updates",
+      "Job search with location and category filters",
+      "Employer and job seeker user roles",
+      "Job application submission and tracking",
+      "Profile management with resume uploads",
+      "Admin dashboard for job approvals and analytics",
     ],
     gallery: [
       "/project/riau-jobseeker.wuaze.com__i=1.png",
       "/project/riau-jobseeker.wuaze.com_job.png",
       "/project/riau-jobseeker.wuaze.com_user_profile_12.png",
     ],
-    github: "",
-    livePreview: ""
+    github: null,
+    livePreview: "http://riau-jobseeker.wuaze.com/",
   },
 
   {
@@ -158,34 +167,36 @@ const projects = [
     category: "Web",
     image: "/project/INDEX - HOME GURU.png",
     description:
-      "A complete redesign of an e-commerce platform focusing on user experience and conversion optimization.",
+      "A digital report card system for schools to manage and distribute student grades securely.",
     longDescription: (
       <>
         <p>
-          This project involved a complete overhaul of an existing e-commerce platform to improve user experience,
-          increase conversion rates, and modernize the visual design.
+          This platform digitizes the traditional report card, allowing teachers
+          to input grades and students to access their academic performance
+          online.
         </p>
         <p>
-          The redesign focused on creating a seamless shopping experience across all devices, with special attention to
-          the checkout process and product discovery.
+          The system includes ranking features, grade history, and downloadable
+          reports, built with role-based access for staff, students, and
+          parents.
         </p>
       </>
     ),
-    technologies: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Stripe", "Sanity CMS"],
+    technologies: ["React", "Next.js", "Tailwind CSS", "Sanity CMS"],
     features: [
-      "Responsive design optimized for all devices",
-      "Advanced filtering and search functionality",
-      "Streamlined checkout process",
-      "Integrated payment processing",
-      "Content management system for easy updates",
+      "Teacher dashboard to input student grades",
+      "Student report cards with grade history",
+      "Class ranking system",
+      "Role-based login for teachers, students, and parents",
+      "Printable/downloadable grade reports",
     ],
     gallery: [
       "/project/INDEX - HOME GURU.png",
       "/project/INDEX - TABLE RANKING SISWA.png",
       "/project/INDEX -TABLE RAPORT SISWA.png",
     ],
-    github: "",
-    livePreview: ""
+    github: "https://github.com/yeeagerr/e-raport-mhs",
+    livePreview: null,
   },
 
   {
@@ -194,45 +205,46 @@ const projects = [
     category: "Design",
     image: "/project/gokureer.png",
     description:
-      "A complete redesign of an e-commerce platform focusing on user experience and conversion optimization.",
+      "A bold and modern hero/header section for a courier service website, built for instant user engagement.",
     longDescription: (
       <>
         <p>
-          This project involved a complete overhaul of an existing e-commerce platform to improve user experience,
-          increase conversion rates, and modernize the visual design.
+          This design project centers around the creation of a visually engaging
+          and functional website header for a courier service. It includes
+          call-to-action elements and delivery tracking highlights.
         </p>
         <p>
-          The redesign focused on creating a seamless shopping experience across all devices, with special attention to
-          the checkout process and product discovery.
+          The focus was on brand clarity, responsive layout, and immediate
+          accessibility to key services like order tracking and price
+          estimation.
         </p>
       </>
     ),
-    technologies: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Stripe", "Sanity CMS"],
+    technologies: ["Figma", "Photoshop"],
     features: [
-      "Responsive design optimized for all devices",
-      "Advanced filtering and search functionality",
-      "Streamlined checkout process",
-      "Integrated payment processing",
-      "Content management system for easy updates",
+      "Eye-catching hero banner design",
+      "Call-to-action buttons for order and tracking",
+      "Courier branding and icons integration",
+      "Responsive layout mockup",
     ],
-    gallery: [
-      "/project/gokureer.png",
-    ],
-    github: "",
-    livePreview: ""
+    gallery: ["/project/gokureer.png"],
+    github: null,
+    livePreview:
+      "https://www.figma.com/design/VSNY3EA5VjLgkuiwLq5yWO/Untitled?node-id=1-3&t=bNadhtDaLhA2Y4mi-0",
   },
-  
-]
+];
 
 // Categories for filtering
-const categories = ["All", "Web", "UI/UX", "Design", "Mobile", "Experimental"]
+const categories = ["All", "Web", "UI/UX", "Design", "Mobile", "Experimental"];
 
 export default function Projects() {
-  const [selectedCategory, setSelectedCategory] = useState("All")
-  const [selectedProject, setSelectedProject] = useState(null)
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const filteredProjects =
-    selectedCategory === "All" ? projects : projects.filter((project) => project.category === selectedCategory)
+    selectedCategory === "All"
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
 
   return (
     <main className="min-h-screen bg-white pt-24 pb-24">
@@ -245,9 +257,12 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-gray-900 mb-6">My Projects</h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-gray-900 mb-6">
+            My Projects
+          </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            A curated selection of my work across various disciplines and technologies.
+            A curated selection of my work across various disciplines and
+            technologies.
           </p>
         </motion.div>
 
@@ -266,7 +281,10 @@ export default function Projects() {
         </div>
 
         {/* Projects Masonry Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-max">
+        <motion.div
+          layout
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-max"
+        >
           <AnimatePresence>
             {filteredProjects.map((project) => (
               <motion.div
@@ -285,7 +303,11 @@ export default function Projects() {
                 }}
               >
                 <div className="overflow-hidden rounded-lg shadow-sm bg-white h-full flex flex-col">
-                  <div className={`overflow-hidden ${project.id % 3 === 0 ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
+                  <div
+                    className={`overflow-hidden ${
+                      project.id % 3 === 0 ? "aspect-[3/4]" : "aspect-[4/3]"
+                    }`}
+                  >
                     <img
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}
@@ -296,11 +318,18 @@ export default function Projects() {
                     <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">
                       {project.category}
                     </span>
-                    <h3 className="text-xl font-medium text-gray-900 mt-1 mb-2">{project.title}</h3>
-                    <p className="text-gray-600 mb-4 line-clamp-2 flex-grow">{project.description}</p>
+                    <h3 className="text-xl font-medium text-gray-900 mt-1 mb-2">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4 line-clamp-2 flex-grow">
+                      {project.description}
+                    </p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.technologies.slice(0, 2).map((tech) => (
-                        <span key={tech} className="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full">
+                        <span
+                          key={tech}
+                          className="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full"
+                        >
                           {tech}
                         </span>
                       ))}
@@ -322,8 +351,12 @@ export default function Projects() {
         </motion.div>
 
         {/* Project Modal */}
-        <ProjectModal project={selectedProject} isOpen={!!selectedProject} onClose={() => setSelectedProject(null)} />
+        <ProjectModal
+          project={selectedProject}
+          isOpen={!!selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
       </div>
     </main>
-  )
+  );
 }

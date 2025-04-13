@@ -9,7 +9,7 @@ export default function CustomCursor() {
   const [isHidden, setIsHidden] = useState(true)
 
   useEffect(() => {
-    const updatePosition = (e) => {
+    const updatePosition = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY })
       setIsHidden(false)
     }

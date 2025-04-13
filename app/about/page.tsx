@@ -42,11 +42,11 @@ export default function About() {
             className="relative"
           >
             <div className="aspect-[4/5] overflow-hidden rounded-lg">
-              <img src="/placeholder.svg?height=600&width=480" alt="Portrait" className="w-full h-full object-cover" />
+              <img src="/me.jpeg" alt="Portrait" className="w-full h-full object-cover" />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-md">
-              <p className="text-sm font-medium text-gray-900">Based in Batam</p>
-              <p className="text-xs text-gray-600">EST (UTC-5)</p>
+                <p className="text-sm font-medium text-gray-900">Based in Batam, Indonesia</p>
+                <p className="text-xs text-gray-600">WIB (UTC+7)</p>
             </div>
           </motion.div>
 
