@@ -44,7 +44,7 @@ export default function About() {
             <div className="aspect-[4/5] overflow-hidden rounded-lg">
               <img src="/me.jpeg" alt="Portrait" className="w-full h-full object-cover" />
             </div>
-            <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-md">
+            <div className="absolute -bottom-6 -right-3 bg-white p-4 rounded-lg shadow-md">
                 <p className="text-sm font-medium text-gray-900">Based in Batam, Indonesia</p>
                 <p className="text-xs text-gray-600">WIB (UTC+7)</p>
             </div>
