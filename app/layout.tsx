@@ -1,17 +1,23 @@
-import type React from "react"
-import ClientLayout from "./ClientLayout"
+import type React from "react";
+import ClientLayout from "./ClientLayout";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  return <ClientLayout>{children}</ClientLayout>
+  return (
+    <ClientLayout>
+      <SpeedInsights />
+      <Analytics /> {children}
+    </ClientLayout>
+  );
 }
 
-
-import './globals.css'
+import "./globals.css";
 
 export const metadata = {
-      generator: 'v0.dev'
-    };
+  generator: "v0.dev",
+};
