@@ -10,6 +10,47 @@ import ProjectModal from "@/components/project-modal";
 // Sample project data with expanded details
 const projects = [
   {
+    id: 100,
+    title: "Shopco Rouge Fashion Online Shop",
+    category: "Web",
+    image: "/project/shopco-header.png",
+    description:
+      "A modern e-commerce platform tailored for fashion lovers to browse and purchase clothing and accessories with ease.",
+    longDescription: (
+      <>
+        <p>
+          Shopco Rouge is a stylish and responsive online shopping platform
+          designed for a seamless fashion retail experience. Users can explore
+          the latest trends, view detailed product information, and complete
+          purchases effortlessly.
+        </p>
+        <p>
+          The platform features a mobile-first responsive design, fast search
+          and filtering, shopping cart functionality, and secure PayPal payment
+          integration to ensure a smooth and trustworthy checkout process. It
+          also includes a powerful admin panel for managing products, orders,
+          and customers.
+        </p>
+      </>
+    ),
+    technologies: ["Nextjs", "Typescript", "Tailwind CSS"],
+    features: [
+      "Product catalog with category filtering",
+      "Shopping cart and real-time cart updates",
+      "Secure checkout with PayPal payment gateway",
+      "Responsive design for mobile and desktop",
+      "Admin dashboard for product, order, and user management",
+    ],
+    gallery: [
+      "/project/shopco-rouge-two.vercel.app_.png",
+      "/project/shopco-rouge-two.vercel.app_ (1).png",
+      "/project/shopco-rouge-two.vercel.app_ (2).png",
+    ],
+    github: null,
+    livePreview: "https://shopco-rouge-two.vercel.app/",
+  },
+
+  {
     id: 1,
     title: "Online ticketing bus travel",
     category: "Web",
